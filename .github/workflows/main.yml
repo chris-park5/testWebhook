@@ -47,4 +47,4 @@ jobs:
               "id": ${{ github.event.sender.id }}
             }
           }' \
-          https://abc123.ngrok.io/api/webhook/github/push
+          https://boilerless-thecate-willow.ngrok-free.dev/github/push
