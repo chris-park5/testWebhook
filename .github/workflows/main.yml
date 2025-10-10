@@ -1,0 +1,21 @@
+name: Test Documentation Webhook
+on:
+  push:
+    branches: [ main, master ]
+jobs:
+  notify:
+    runs-on: ubuntu-latest
+    steps:
+    - name: Send to documentation service
+      run: |
+        curl -X POST \
+          -H "Content-Type: application/json" \
+          -d '{
+            "ref": "refs/heads/main",
+            "repository": {
+              "name": "${{ github.event.repository.name }}",
+              "full_name": "${{ github.event.repository.full_name }}"
+            },
+            "commits": [{"message": "test commit"}]
+          }' \
+          https://abc123.ngrok.io/api/webhook/github/push
