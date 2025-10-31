@@ -54,3 +54,7 @@ class DocumentGenerator:
 
         # 워크플로우 생성
         self.workflow = self._build_workflow()
+
+
+
+print("hi")
